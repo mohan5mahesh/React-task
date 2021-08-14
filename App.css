@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0062e6, #33aeff);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.container {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.price_tag {
+  border: none;
+  border-radius: 1rem;
+  width: 100%;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.price {
+  text-align: center;
+  font-weight: bold;
+  color: #989fa4;
+  margin: 0.5rem;
+}
+.plan-amount {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+}
+.plan-duration {
+  font-size: 0.8rem;
+}
+.plan-list {
+  list-style: none;
+}
+.plan-list li {
+  margin-bottom: 16px;
+  display: flex;
+}
+.plan-list :before {
+  content: "✓";
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.price_tag:nth-child(1) .plan-list li:nth-child(n + 5) {
+  opacity: 0.3;
+}
+
+.price_tag:nth-child(1) .plan-list li:nth-child(n + 5):before {
+  content: "✖";
+}
+.price_tag:nth-child(2) .plan-list li:nth-child(n + 8) {
+  opacity: 0.3;
+}
+.price_tag:nth-child(2) .plan-list li:nth-child(n + 8):before {
+  content: "✖";
+}
+.price_tag:nth-child(3) .plan-list li:nth-child(1) {
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 5rem;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+  background: linear-gradient(to right, #0062e6, #33aeff);
+  color: #ffffff;
+}
+
+@media (min-width: 420px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  button:hover {
+    opacity: 0.5;
+  }
+}
+@media (min-width: 760px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .price_tag:hover {
+    margin-top: -0.25rem;
+    margin-bottom: 0.25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+  }
+  button:hover {
+    opacity: 1;
+  }
+}
+.bold {
+  font-weight: bold;
+}
